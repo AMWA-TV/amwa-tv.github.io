@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+{% seo %}
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+
+      <div id="logo-banner">
+        <a href="https://www.amwa.tv/"><img id="amwa-logo" src="{{ site.baseurl }}/assets/images/AMWA-80a0ff.png" target="_blank" alt="AMWA logo"/></a>
+        <span id="title">Advanced Media Workflow Association</span>
+        <a href="https://amwa-tv.github.io/nmos"><img id="nmos-logo" src="{{ site.baseurl }}/assets/images/NMOS-80a0ff.png" alt="NMOS logo"/></a>
+      </div>
+        
+        <div class="header" id="myHeader">
+          <a href="{{ site.baseurl }}/">HOME</a>
+          <span class="dropdown">NMOS...
+            <div class="dropdown-content">
+                <p><a href="https://amwa-tv.github.io/nmos">General NMOS Documentation</a></p>
+                <p><a href="https://amwa-tv.github.io/nmos-discovery-registration">IS-04 (Discovery & Registration)</a></p>
+                <p><a href="https://amwa-tv.github.io/nmos-device-connection-management">IS-05 (Connection Management)</a></p>
+                <p><a href="https://amwa-tv.github.io/nmos-network-control">IS-06 (Network Control)</a></p>
+                <p><a href="https://amwa-tv.github.io/nmos-event-tally">IS-07 (Event & Tally)</a></p>
+                <p><a href="https://amwa-tv.github.io/nmos-parameter-registers">Parameter Registers</a></p>
+                <p><a href="https://amwa-tv.github.io/nmos-grouping">Grouping</a></p>
+                <p><a href="https://amwa-tv.github.io/nmos-audio-channel-mapping">Audio Channel Mapping</a></p>
+                <p><a href="https://amwa-tv.github.io/nmos-api-security">API Security</a></p>
+            </div>
+          </span>
+          <span class="dropdown">AS-11...
+              <div class="dropdown-content">
+                  <p><a href="https://amwa.tv/projects/AS-11.shtml">Project Page</a></p>
+                  <p><a href="http://www.amwa.tv/rawgit/AMWA-TV/AS-11_UK_DPP_SD/master/AMWA_AS_11_UK_DPP_SD.html">UK DPP SD</a></p>
+                  <p><a href="http://www.amwa.tv/rawgit/AMWA-TV/AS-11_UK_DPP_HD/master/AMWA_AS_11_UK_DPP_HD.html">UK DPP HD</a></p>
+                  <p><a href="http://www.amwa.tv/rawgit/AMWA-TV/AS-11_X1/master/AMWA_AS_11_X1.html">X1 (DPP UHD)</a></p>
+                  <p><a href="http://www.amwa.tv/rawgit/AMWA-TV/AS-11_X2/master/AMWA_AS_11_X2.html">X2 (HD Intra) </a></p>
+                  <p><a href="http://www.amwa.tv/rawgit/AMWA-TV/AS-11_X3/master/AMWA_AS_11_X3.html">X3 (HD Long GOP 25/50)</a></p>
+                  <p><a href="http://www.amwa.tv/rawgit/AMWA-TV/AS-11_X4/master/AMWA_AS_11_X4.html">X4 (HD Long GOP 23.98/59.94)</a></p>
+                  <p><a href="https://amwa.tv/projects/AS-11-X5.shtml">X5 (DPP UHD Commercials)</a></p>
+                  <p><a href="https://amwa.tv/projects/AS-11-X6.shtml">X6 (DPP HD Commercials)</a></p>
+                  <p><a href="http://www.amwa.tv/rawgit/AMWA-TV/AS-11_X7/master/AMWA_AS_11_X7.html">X7 (SD D10)</a></p>
+                  <p><a href="http://www.amwa.tv/rawgit/AMWA-TV/AS-11_X8/master/AMWA_AS_11_X8.html">X8 (NABA DPP HD MPEG-2)</a></p>
+                  <p><a href="http://www.amwa.tv/rawgit/AMWA-TV/AS-11_X9/master/AMWA_AS_11_X9.html">X9 (NABA DPP HD AVC)</a></p>
+              </div>
+            </span>
+           
+          <a href="https://github.com/AMWA-TV/">GITHUB</a>
+        </div>
+  
+      <div class="content">
+        {{ content }}
+      </div>
+
+      {% if site.github.private != true and site.github.license %}
+      <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
+        This site is open source. {% github_edit_link "Improve this page" %}.
+      </div>
+      {% endif %}
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+    
+    {% if site.google_analytics %}
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', '{{ site.google_analytics }}', 'auto');
+      ga('send', 'pageview');
+    </script>
+    {% endif %}
+
+
+    <script>
+    window.onscroll = function() {myFunction()};
+    
+    var header = document.getElementById("myHeader");
+    var sticky = header.offsetTop;
+    
+    function myFunction() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
+
+    </script>
+  </body>
+</html>

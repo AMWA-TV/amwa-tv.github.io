@@ -1,1 +1,8 @@
-theme: jekyll-theme-cayman
+# Don't change this
+theme: jekyll-theme-primer
+
+# GitHub project
+#baseurl: /nmos
+
+# Which release or branch appears in header links and on the home page
+#default_tree: branches/master
