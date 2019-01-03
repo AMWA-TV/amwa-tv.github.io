@@ -1,6 +1,4 @@
-# amwa-tv.github.io
-
-Welcome to AMWA's GitHub Pages
+# Welcome to AMWA's GitHub Pages
 
 [amwa.tv](https://amwa.tv)
 
