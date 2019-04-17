@@ -24,12 +24,21 @@ body {
     width: 1024px;
     background-color: #80a0ff;
 
+    #mxf-logo {
+      display: table-cell;
+      width: 120px;
+      height: 40px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      // border: 3px solid red;
+    }
+
     #nmos-logo {
       display: table-cell;
-      width: 191px;
-      height: 64px;
+      width: 143px;
+      height: 48px;
       margin-top: 10px;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       // border: 3px solid red;
     }
 
@@ -60,7 +69,7 @@ body {
     height: 64px;
     line-height: 64px;
     width: 1024px;
-    font-size: 125%;
+    font-size: 100%;
     background: #4040ff;
 
     a {
@@ -78,6 +87,7 @@ body {
       line-height: normal;
       padding-left: 10px;
       padding-right: 10px;
+      font-size: 125%;
       color: #f1f1f1;
     }
 
