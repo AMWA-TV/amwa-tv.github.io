@@ -19,9 +19,9 @@ declare -A nmos_spec=(
 )
 
 declare -A external_spec=(
-    [ms-01/v1.1]="https://e6cfd1ba-033d-44fd-8f16-0027ec40a7b2.filesusr.com/ugd/f66d69_cea9a4c10d834b819fcd3c5c66974dbb.pdf"
-    [ms-02/v1.0.1]="https://e6cfd1ba-033d-44fd-8f16-0027ec40a7b2.filesusr.com/ugd/f66d69_945288a766324109896fb0a5e5ac04c8.pdf"
-    [ms-03/v1.0.1]="https://e6cfd1ba-033d-44fd-8f16-0027ec40a7b2.filesusr.com/ugd/f66d69_b73906b95ec84be8a3a83df0279035cd.pdf"
+    [ms-01]="https://e6cfd1ba-033d-44fd-8f16-0027ec40a7b2.filesusr.com/ugd/f66d69_cea9a4c10d834b819fcd3c5c66974dbb.pdf"
+    [ms-02]="https://e6cfd1ba-033d-44fd-8f16-0027ec40a7b2.filesusr.com/ugd/f66d69_945288a766324109896fb0a5e5ac04c8.pdf"
+    [ms-03]="https://e6cfd1ba-033d-44fd-8f16-0027ec40a7b2.filesusr.com/ugd/f66d69_b73906b95ec84be8a3a83df0279035cd.pdf"
 )
 
 function add_top_redirect {
@@ -61,16 +61,14 @@ EOF
 
 function add_external_redirect {
     id=$1
-    version=$2
-    href=$3
-    echo "$id/$version -> $href"
-    [ ! -d $REDIRECTS_DIR/$id ] && mkdir $REDIRECTS_DIR/$id
-    cat <<EOF > $REDIRECTS_DIR/$id/$version.md
+    href=$2
+    echo "$id -> $href"
+    cat <<EOF > $REDIRECTS_DIR/$id.md
 ---
 redirect_from:
-  - "/$id/$version/"
-  - "/${id^^}/$version/"
-  - "/${id//-/}/$version/"
+  - "/$id/"
+  - "/${id^^}/"
+  - "/${id//-/}/"
 
 redirect_to: "$href"
 ---
@@ -93,9 +91,8 @@ for id in "${!nmos_spec[@]}"; do
     done
 done
 
-for id_version in "${!external_spec[@]}"; do
-    href=${external_spec[$id_version]}
-    id=${id_version%/*}
-    version=${id_version#*/}
-    add_external_redirect $id $version $href
+# Specs served elsewhere
+for id in "${!external_spec[@]}"; do
+    href=${external_spec[$id]}
+    add_external_redirect $id $href
 done
