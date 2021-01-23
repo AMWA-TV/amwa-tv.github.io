@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-BASE_URL=https://nmos.amwa.tv
+BASE_URL=https://specs.amwa.tv
 REDIRECTS_DIR=redirects
 
 declare -A nmos_spec=(
@@ -11,11 +11,13 @@ declare -A nmos_spec=(
 [is-08]="nmos-audio-channel-mapping"
 [is-09]="nmos-system"
 [is-10]="nmos-authorization"
+[ms-04]="nmos-id-timing-model"
 [bcp-002]="nmos-grouping"
 [bcp-003]="nmos-api-security"
 [bcp-003-01]="nmos-secure-communication"
 [bcp-003-02]="nmos-authorization-practice"
 [bcp-003-03]="nmos-certificate-provisioning"
+[bcp-004-01]="nmos-receiver-capabilities"
 )
 
 declare -A external_spec=(
@@ -27,15 +29,16 @@ declare -A external_spec=(
 function add_top_redirect {
     id=$1
     name=$2
-    echo "$id -> $name"
+    echo "$id == $name"
     cat <<EOF > $REDIRECTS_DIR/$id.md
 ---
 redirect_from:
+  - "/$name/"
   - "/$id/"
   - "/${id^^}/"
   - "/${id//-/}/"
 
-redirect_to: "$BASE_URL/$name"
+redirect_to: "$BASE_URL/$id"
 ---
 EOF
 }

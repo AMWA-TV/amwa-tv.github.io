@@ -12,7 +12,7 @@ and the Networked Media Open Specifications (NMOS) for interoperable control and
 
 [AMWA web site](https://amwa.tv)
 
-[NMOS documentation](https://amwa-tv.github.io/nmos)
+[NMOS documentation](https://https://specs.amwa.tv/nmos)
 
 [AS-11 project page](https://amwa.tv/projects/AS-11.shtml)
 
