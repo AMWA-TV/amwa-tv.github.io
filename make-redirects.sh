@@ -4,6 +4,7 @@ BASE_URL=https://specs.amwa.tv
 REDIRECTS_DIR=redirects
 
 declare -A nmos_spec=(
+[is-template]="nmos-template"
 [is-04]="nmos-discovery-registration"
 [is-05]="nmos-device-connection-management"
 [is-06]="nmos-network-control"
