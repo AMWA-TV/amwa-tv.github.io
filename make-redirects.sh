@@ -19,6 +19,9 @@ declare -A nmos_spec=(
 [bcp-003-02]="nmos-authorization-practice"
 [bcp-003-03]="nmos-certificate-provisioning"
 [bcp-004-01]="nmos-receiver-capabilities"
+[nmos]="nmos"
+[nmos-parameter-registers]="nmos-parameter-registers"
+[nmos-edid-connection-management]="nmos-edid-connection-management"
 )
 
 declare -A external_spec=(
