@@ -1,7 +1,6 @@
 ---
 redirect_from:
   - "/nmos/"
-  - "/nmos/"
   - "/NMOS/"
   - "/nmos/"
 

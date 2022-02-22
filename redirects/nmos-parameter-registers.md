@@ -1,7 +1,6 @@
 ---
 redirect_from:
   - "/nmos-parameter-registers/"
-  - "/nmos-parameter-registers/"
   - "/NMOS-PARAMETER-REGISTERS/"
   - "/nmosparameterregisters/"
 

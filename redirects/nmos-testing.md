@@ -1,7 +1,6 @@
 ---
 redirect_from:
   - "/nmos-testing/"
-  - "/nmos-testing/"
   - "/NMOS-TESTING/"
   - "/nmostesting/"
 
