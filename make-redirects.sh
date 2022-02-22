@@ -22,6 +22,7 @@ declare -A nmos_spec=(
 [nmos]="nmos"
 [nmos-parameter-registers]="nmos-parameter-registers"
 [nmos-edid-connection-management]="nmos-edid-connection-management"
+[nmos-testing]="nmos-testing"
 )
 
 declare -A external_spec=(
